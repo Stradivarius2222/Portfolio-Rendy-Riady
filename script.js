@@ -24,7 +24,17 @@ sections.forEach(section => {
   observer.observe(section);
 });
 
+// Dark mode toggle
+const toggleBtn = document.getElementById('darkModeToggle');
+toggleBtn?.addEventListener('click', () => {
+  document.body.classList.toggle('light-mode');
 
+  if (document.body.classList.contains('light-mode')) {
+    toggleBtn.textContent = 'Dark Mode';
+  } else {
+    toggleBtn.textContent = 'Light Mode';
+  }
+});
 const canvas = document.getElementById('bgCanvas');
 const ctx = canvas.getContext('2d');
 
@@ -70,4 +80,3 @@ drawParticles();
 
 
   
-
